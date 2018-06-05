@@ -27,22 +27,8 @@
         {year: '2012', population: 30.3 }
       ];
 
-      const chart = new G2.Chart({
-        container: 'mountNode',
-        forceFit: true,
-        height: window.innerHeight
-      });
-      chart.source(data);
-      chart.coord('polar');
-      chart.axis(false);
-      chart.interval().position('year*population')
-        .style({
-        lineWidth: 1,
-        stroke: '#fff'
-      });
-      chart.render(); 
       ReactDOM.render((
-        <Chart height={window.innerHeight} data={data} forceFit>
+        <Chart height={window.innerHeight} data={data} padding='auto' forceFit>
           <Coord type='polar' />
           <Tooltip />
           <Legend 
