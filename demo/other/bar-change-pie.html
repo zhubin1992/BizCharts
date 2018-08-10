@@ -19,7 +19,7 @@
               currentState: 'WY'
           }
       });
-      $.getJSON('/public/data/population-by-age.json', data => {
+      $.getJSON('/BizCharts/public/data/population-by-age.json', data => {
         var dvForAll = ds
         .createView('populationByAge', {
             watchingStates: [], // 用空数组，使得这个实例不监听 state 变化
