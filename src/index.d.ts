@@ -5,7 +5,7 @@
 
 // Last module patch version validated against: 3.1.0
 
-import * as G2 from '@antv/g2/src';
+import * as G2 from '@antv/g2';
 import * as React from "react";
 
 export = bizcharts;
@@ -33,12 +33,14 @@ declare namespace bizcharts{
   /**
    * Util
    */
-  export const Util: G2.Util
+  export interface Util extends G2.Util {}
+  export const Util: Util;
 
   /**
    * shape
    */
-  export const Shape: G2.Shape
+  export interface Shape extends G2.Shape {}
+  export const Shape: Shape;
 
   /**
    * Animate

@@ -1,0 +1,24 @@
+{
+  "files": [
+    "./src/index.d.ts",
+    "./test/bizcharts-tests.tsx"
+  ],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "*": ["types/*"],
+      "bizcharts": ["./src"]
+    },
+    "module": "system",
+    "jsx": "react",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "preserveConstEnums": true,
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules",
+    "test/**/*"
+  ]
+}

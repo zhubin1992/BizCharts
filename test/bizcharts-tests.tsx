@@ -1,6 +1,6 @@
 import * as React from 'react';
-import * as BizCharts from 'bizcharts';
-import { Chart, View, Shape, Tooltip, Coord, Axis, Legend, Guide, Facet } from 'bizcharts';
+import * as BizCharts from '../src/index';
+import { Chart, View, Tooltip, Coord, Axis, Legend, Guide, Facet } from 'bizcharts';
 
 const g2: any = BizCharts.G2;
 
@@ -22,6 +22,8 @@ const util2: BizCharts.Util = util;
 util2.each();
 util2.test();
 
+BizCharts.Util.each();
+
 const textStyle: G2.Styles.text = {
   fill: '#333',
 }
@@ -29,6 +31,8 @@ const textStyle: G2.Styles.text = {
 const axisLabel: G2.AxisLabel = {
   offset: 10,
 }
+
+const Shape = BizCharts.Shape;
 
 g2.track();
 
@@ -40,7 +44,7 @@ const chartProps: BizCharts.ChartProps = {
 
 const viewProps: BizCharts.ViewProps = {
   start: {x: 0, y: 0.5},
-  filter: ['x', (val) => {return val > 20;}]
+  filter: ['x', (val: number) => {return val > 20;}]
 }
 
 const tooltipCfg: BizCharts.TooltipProps = {
@@ -74,7 +78,7 @@ class MyCharts extends React.Component<{}, myChartsState> {
             onHover={ev => {}} // 自定义 hover 事件
             onClick={ev => {}} // 自定义 click 事件
           />
-          <View data={[1]} filter={['x', (val) => {return val > 20;}]}>
+          <View data={[1]} filter={['x', (val: number) => {return val > 20;}]}>
           </View>
           <Guide>
             <Guide.Line
@@ -96,7 +100,7 @@ class MyCharts extends React.Component<{}, myChartsState> {
             />
           </Guide>
           <Facet type='rect' fields = {['cut','clarity']}>
-            {(view, facet)=>{
+            {(view: G2.View, facet: any)=>{
               view.point().position('carat*price').color('cut');
             }}
           </Facet>
