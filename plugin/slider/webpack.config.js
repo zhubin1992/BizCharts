@@ -8,7 +8,7 @@ var config = {
   entry: './src/index.jsx',
 
   output: {
-    library: 'bizcharts-plugin-slider',
+    library: 'BizChartsPluginSlider',
     libraryTarget: 'umd',
   },
 
