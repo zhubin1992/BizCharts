@@ -22,7 +22,6 @@
   ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "browser": "umd/BizCharts.js",
   "module": "es/index.js",
   "scripts": {
     "build": "run-s clean lib:* build:*",
